@@ -31,6 +31,18 @@ int perfectSum(vector<int> &arr, int target)
 
     return dp[n - 1][target];
 }
+
+// count partitions with difference d
+int countPartitions(vector<int> &arr, int d)
+{
+    // Code here
+    int totSum = 0;
+    for (auto it : arr)
+        totSum += it;
+    if (totSum - d < 0 || (totSum - d) % 2)
+        return 0;
+    return perfectSum(arr, (totSum - d) / 2);
+}
 int main()
 {
     int n;
@@ -43,4 +55,7 @@ int main()
     int target;
     cin >> target;
     cout << perfectSum(arr, target) << endl;
+    int d;
+    cin >> d;
+    cout << countPartitions(arr, d) << endl;
 }
