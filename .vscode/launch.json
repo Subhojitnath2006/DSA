@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Subhojit/Desktop/DSA/Stack&Queue",
-      "program": "c:/Users/Subhojit/Desktop/DSA/Stack&Queue/build/Debug/outDebug",
+      "cwd": "c:/Users/Subhojit/Desktop/DSA/Strings",
+      "program": "c:/Users/Subhojit/Desktop/DSA/Strings/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
