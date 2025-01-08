@@ -14,6 +14,38 @@ int countPairs(vector<int>& arr, int target) {
     
         return count;
     }
+
+    //the array contains duplicate elements
+    int countPairsDuplicate(vector<int> &arr, int target) {
+        // Complete the function
+        int n=arr.size();
+        int cnt=0;
+        int start=0,end=n-1;
+        while(start<end){
+            int sum=arr[start]+arr[end];
+            if(sum==target) {
+                int countStart = 1, countEnd = 1;
+                while (start < end && arr[start] == arr[start + 1]) {
+                    countStart++;
+                    start++;
+                }
+                while (start < end && arr[end] == arr[end - 1]) {
+                    countEnd++;
+                    end--;
+                }
+                if (start == end) {
+                    cnt += (countStart * (countStart - 1)) / 2;
+                } else {
+                    cnt += countStart * countEnd;
+                }
+                start++;
+                end--;
+            }
+            else if(sum>target) end--;
+            else start++;
+        }
+        return cnt;
+    }
     int main(){
         int n;
         cin>>n;
@@ -22,4 +54,7 @@ int countPairs(vector<int>& arr, int target) {
         int target;
         cin>>target;
         cout<<countPairs(arr,target);
+
+        cout<<endl;
+        cout<<countPairsDuplicate(arr,target);
     }
