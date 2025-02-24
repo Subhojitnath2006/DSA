@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 vector<int> calculateSpan(vector<int>& arr) {
-    // write code here
     int n=arr.size();
     stack<int>st;
     st.push(0);
